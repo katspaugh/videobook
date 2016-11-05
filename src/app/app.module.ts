@@ -12,7 +12,6 @@ import { SubtitlesParser } from './services/subtitles-parser';
 @NgModule({
   declarations: [
     AppComponent,
-    AppComponent,
     VbCaptions,
     VbDrop,
     VbScroll,

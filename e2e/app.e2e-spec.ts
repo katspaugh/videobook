@@ -1,14 +1,14 @@
-import { Ng2VideobookPage } from './app.po';
+import { VideobookPage } from './app.po';
 
 describe('ng2-videobook App', function() {
-  let page: Ng2VideobookPage;
+  let page: VideobookPage;
 
   beforeEach(() => {
-    page = new Ng2VideobookPage();
+    page = new VideobookPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('');
   });
 });

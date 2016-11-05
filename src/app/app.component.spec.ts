@@ -2,13 +2,23 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { VbCaptions } from './components/vb-captions/vb-captions';
+import { VbDrop } from './components/vb-drop/vb-drop';
+import { VbScroll } from './components/vb-scroll/vb-scroll';
+import { VbVideo } from './components/vb-video/vb-video';
+import { SubtitlesParser } from './services/subtitles-parser';
 
-describe('App: Ng2Videobook', () => {
+describe('App: Videobook', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        VbCaptions,
+        VbDrop,
+        VbScroll,
+        VbVideo
       ],
+      providers: [SubtitlesParser]
     });
   });
 
@@ -18,10 +28,10 @@ describe('App: Ng2Videobook', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
+  it(`should have a title`, async(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
+    expect(app.title).toEqual('');
   }));
 
   it('should render title in a h1 tag', async(() => {
