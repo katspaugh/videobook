@@ -1,6 +1,6 @@
 {
-  "name": "ng2-videobook",
-  "version": "0.0.0",
+  "name": "Videobook",
+  "version": "0.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {

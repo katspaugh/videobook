@@ -1,0 +1,12 @@
+<div class="vb-captions">
+  <div *ngFor="let caption of captions"
+       class="vb-captions__caption"
+       [vbScroll]="isActive(caption)"
+       [ngClass]="{
+                  'vb-captions__caption_active': isActive(caption),
+                  'vb-captions__caption_previous': isPrevActive(caption)
+                  }"
+       (click)="selectCaption(caption)"
+       [innerHTML]="caption.text">
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.vb-captions {
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff;
+  color: #333;
+}
+
+.vb-captions__caption {
+  font-size: 0.9em;
+  cursor: pointer;
+  margin: 0;
+  padding: 1em;
+  transition: background-color 100ms linear;
+}
+
+.vb-captions__caption * {
+  color: #333 !important;
+}
+
+.vb-captions__caption:hover {
+  background-color: #b1e7f8;
+}
+
+.vb-captions__caption:active,
+.vb-captions__caption_active:hover,
+.vb-captions__caption_active {
+  background-color: #008bc7;
+  color: #fff;
+}
+
+.vb-captions__caption_active,
+.vb-captions__caption_previous {
+  transition: background-color 300ms linear;
+}
+
+.vb-captions__caption_previous {
+  background-color: rgba(0, 139, 199, 0.7);
+  color: #fff;
+}

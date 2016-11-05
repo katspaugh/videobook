@@ -1,0 +1,18 @@
+<div class="vb-video" [hidden]="!videoUrl" [ngClass]="{ 'vb-video--not-fullscreen': !isFullscreen }">
+  <video class="vb-video__element"
+         (load)="videoStream.next({ event: 'load' })"
+         (play)="videoStream.next({ event: 'play' })"
+         (pause)="videoStream.next({ event: 'pause' })"
+         (error)="videoStream.next({ event: 'error' })"
+         crossorigin
+         controls>
+    <track kind="subtitles"
+           *ngFor="let track of captionTracks"
+           [src]="track.url"
+           (load)="captionsOnLoad()"
+           (cuechange)="captionsOnCuechange()"
+           default />
+  </video>
+
+  <div class="vb-video__cc" [innerHTML]="displayedText"></div>
+</div>

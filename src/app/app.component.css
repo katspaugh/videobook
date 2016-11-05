@@ -1,0 +1,37 @@
+.home {
+  height: 100%;
+}
+
+.home__container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  position: relative;
+}
+
+.home__title {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home__main {
+  flex: 1 80%;
+  position: relative;
+}
+
+.home__aside {
+  flex: 1 20%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.home__captions {
+  height: 100%;
+}

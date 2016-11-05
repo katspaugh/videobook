@@ -1,3 +1,42 @@
-<h1>
-  {{title}}
-</h1>
+<div class="home">
+  <vb-drop (uploadVideo)="loadVideo($event)" (uploadCaptions)="loadCaptions($event)">
+    <div class="home__container">
+      <div class="hint" [hidden]="videoUrl || captionsUrl">
+        Drag-and-drop a&nbsp;video file and the&nbsp;corresponding subtitles file to&nbsp;this page
+      </div>
+
+      <main class="home__main">
+        <div class="hint" [hidden]="!captionsUrl || videoUrl">
+          Drag-and-drop a&nbsp;video file
+        </div>
+
+        <div class="home__video" [hidden]="!videoUrl || isError">
+          <h3 class="home__title">{{ title }}</h3>
+
+          <vb-video [videoUrl]="videoUrl"
+                    [captionsUrl]="captionsUrl"
+                    [currentTime]="currentTime"
+                    (videoStream)="onVideoEvent($event)">
+          </vb-video>
+        </div>
+
+        <div class="hint" [hidden]="!isError">
+          Error loading “{{ title }}”. Try a different file.
+        </div>
+      </main>
+
+      <aside class="home__aside">
+        <div class="hint" [hidden]="captionsUrl || !videoUrl || isError">
+          Drag-and-drop a&nbsp;subtitles file<br />(vtt, srt or ass)
+        </div>
+
+        <div class="home__captions" [hidden]="!captionsUrl">
+          <vb-captions *ngIf="captions"
+                       [captions]="captions"
+                       [activeCaption]="activeCaption"
+                       (captionSelect)="onCaptionsSelect($event)"></vb-captions>
+        </div>
+      </aside>
+    </div>
+  </vb-drop>
+</div>

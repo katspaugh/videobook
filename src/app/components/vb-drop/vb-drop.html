@@ -1,0 +1,9 @@
+<div class="vb-drop"
+     [ngClass]="{ 'vb-drop_dragover': isDragover }"
+     (dragover)="onDragover($event)"
+     (dragleave)="onDragleave($event)"
+     (drop)="onDrop($event)">
+  <div class="vb-drop__content">
+    <ng-content></ng-content>
+  </div>
+</div>
