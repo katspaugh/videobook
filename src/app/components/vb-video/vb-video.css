@@ -9,14 +9,8 @@
   margin: 0;
 }
 
-.vb-video__element::-webkit-media-controls-toggle-closed-captions-button,
-.vb-video__element::-webkit-media-text-track-container,
-.vb-video__element::cue {
-  display: none;
-}
-
 .vb-video__cc {
-  font-size: 1.7em;
+  font-size: 2.5vw;
   text-align: center;
   position: fixed;
   padding: 30px 3%;
@@ -24,5 +18,11 @@
   right: 20%;
   bottom: 0;
   z-index: 2;
-  text-shadow: 1px 1px #000, 0 0 2px #000;
+  text-shadow: 1px 1px #000, -1px -1px #000, 0 0 2px #000;
+}
+
+@-moz-document url-prefix() {
+  .vb-video__cc {
+    display: none;
+  }
 }

@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* Hide browser's built-in subtitles */
+video::cue {
+  visibility: hidden;
+  color: transparent;
+}
+
+::-webkit-media-controls-toggle-closed-captions-button,
+::-webkit-media-text-track-container {
+  display: none;
+}
