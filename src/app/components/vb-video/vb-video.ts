@@ -122,7 +122,9 @@ export class VbVideo {
 
     if (!track) return null;
 
-    track.mode = 'showing';
+    // Hide the built-in captions
+    track.mode = 'hidden';
+
     return track;
   }
 

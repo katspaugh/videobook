@@ -21,8 +21,13 @@
   text-shadow: 1px 1px #000, -1px -1px #000, 0 0 2px #000;
 }
 
-@-moz-document url-prefix() {
-  .vb-video__cc {
-    display: none;
-  }
+/* Hide browser's built-in subtitles */
+.vb-video ::cue {
+  visibility: hidden;
+  color: transparent;
+}
+
+.vb-video ::-webkit-media-controls-toggle-closed-captions-button,
+.vb-video ::-webkit-media-text-track-container {
+  display: none;
 }

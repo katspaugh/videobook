@@ -1,10 +1,23 @@
-/* Hide browser's built-in subtitles */
-video::cue {
-  visibility: hidden;
-  color: transparent;
+html, body {
+  background-color: #00ADEA;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Hevetica, sans-serif;
+  font-size: 16px;
+  height: 100%;
+  overflow: hidden;
 }
 
-::-webkit-media-controls-toggle-closed-captions-button,
-::-webkit-media-text-track-container {
-  display: none;
+.hint {
+  font-size: 22px;
+  letter-spacing: 1.1px;
+  word-spacing: 0.05em;
+  line-height: 1.5;
+  font-weight: normal;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
 }
